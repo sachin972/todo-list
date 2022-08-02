@@ -1,0 +1,18 @@
+{% extends "todo/layout.html" %}
+
+{% block body %}
+
+    <h1>Update Task</h1>
+
+    <form action="updaterecord/{{ element.id }}" method = "post">
+        {% csrf_token %}
+        <ul>
+            <li>Todo: <input name = "todo" value = "{{ element.todo }}"></li>
+            <li>Description: <input name = "description" value = "{{ element.description }}"></li>
+            <li>Progress: <input name = "progress" value = "{{ element.progress }}"></li>
+            <li>Comments: <input name = "comments" value = "{{ element.comments }}"></li>
+            <li><input type="submit"></li>
+        </ul>
+    </form>
+
+{% endblock %}

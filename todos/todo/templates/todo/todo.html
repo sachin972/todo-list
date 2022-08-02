@@ -1,0 +1,15 @@
+{% extends "todo/layout.html" %}
+
+{% block body %}
+
+    <h1>Todo Item {{ todo.id }}</h1>
+
+    <ul>
+        <li>TODO: {{ todo.todo }}</li>
+        <li>Description: {{ todo.description }}</li>
+        <li>Progress: {{ todo.progress }}</li>
+        <li>Updates: {{ todo.comments }}</li>
+    </ul>
+    <a href="{% url 'update' todo.id %}">Update</a>
+    <a href="{% url 'delete' todo.id %}">delete</a>
+{% endblock %}
